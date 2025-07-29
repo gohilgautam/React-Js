@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import '../public/App.css'
+import image from "../assets/image/Gautam.jpg"
 
 function App() {
 
   return (
     <div>
       <h1>Gautam Gohil</h1>
-      <img src=""></img>
+      <img src="{image}"></img>
       <p>Email: <a href="#">gohilgautam2405@gmail.com</a></p>
       <p>Phone: <a href="#">9104826115</a></p>
       <p>Location: Varachha, Surat</p>
