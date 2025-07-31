@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import '../public/App.css'
+import image from '../public/image/Gautam.jpg'
 
 function App() {
 
   return (
     <div>
       <h1>Gautam Gohil</h1>
-      <img src=""></img>
+      <img src={image}></img>
       <p>Email: <a href="#">gohilgautam2405@gmail.com</a></p>
       <p>Phone: <a href="#">9104826115</a></p>
       <p>Location: Varachha, Surat</p>
@@ -38,7 +39,8 @@ function App() {
         <li><strong>API & Integration:</strong> REST API (GET, POST, PUT, DELETE), JWT Auth</li>
         <li><strong>Other Technologies:</strong> HTML, CSS, Bootstrap, JQuery, MediaQuery, JavaScript</li>
       </ul>
-
+    
+      <button className='print-button' onClick={() => window.print()} type="button">Print Resume</button>
     </div>
   )
 }
