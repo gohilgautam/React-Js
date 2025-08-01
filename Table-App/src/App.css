@@ -1,0 +1,208 @@
+/* Visually Hidden for accessibility */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+}
+
+/* Container Shadow and Padding */
+.table-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px 25px 40px;
+  background: linear-gradient(145deg, #f9fbff, #ebf2ff);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 50, 0.07), inset 0 0 15px #dde8ff;
+}
+
+/* Title */
+.table-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 800;
+  font-size: 2.3rem;
+  color: #2b4370;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+}
+
+/* Table Styles */
+.student-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 9px 25px rgba(59, 109, 216, 0.12);
+  font-size: 1.05rem;
+}
+
+/* Headers */
+.table-header {
+  background: linear-gradient(90deg, #3b6dd8, #2a54b5);
+  color: #fff;
+  font-weight: 700;
+  padding: 16px 22px;
+  text-transform: uppercase;
+  user-select: none;
+  border-bottom: 3px solid #244293;
+  position: relative;
+  cursor: default;
+}
+
+.table-header.sortable {
+  cursor: pointer;
+  outline: none;
+}
+
+.table-header.sortable:focus,
+.table-header.sortable:hover {
+  background: linear-gradient(90deg, #496fdc, #344ea1);
+}
+
+.sort-icon {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  user-select: none;
+  transition: opacity 0.3s ease;
+}
+
+.table-header.sortable:focus .sort-icon,
+.table-header.sortable:hover .sort-icon {
+  opacity: 1;
+}
+
+/* Rows */
+.table-row {
+  background-color: #fdfefe;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 12px;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f6faff;
+}
+
+.table-row:hover,
+.table-row:focus-within {
+  background-color: #e1ebff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(59, 109, 216, 0.25);
+  outline: none;
+}
+
+/* Cells */
+.table-cell {
+  padding: 16px 22px;
+  color: #2b4370;
+  vertical-align: middle;
+  user-select: text;
+  position: relative;
+}
+
+/* Action Cell */
+.action-cell {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+/* Buttons: Enhanced with scale animation on hover */
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, transform 0.15s ease,
+    box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #f6b93b, #f0ad4e);
+  color: #2b2b2b;
+  box-shadow: 0 5px 15px rgba(246, 185, 59, 0.55);
+}
+
+.edit-btn:hover,
+.edit-btn:focus {
+  background: linear-gradient(135deg, #f0a522, #db8c16);
+  box-shadow: 0 8px 20px rgba(219, 140, 22, 0.65);
+  transform: scale(1.08);
+  outline: none;
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #e14e50, #d9534f);
+  color: white;
+  box-shadow: 0 5px 15px rgba(225, 78, 80, 0.55);
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+  background: linear-gradient(135deg, #b63132, #a83231);
+  box-shadow: 0 8px 20px rgba(168, 50, 49, 0.65);
+  transform: scale(1.08);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .student-table,
+  .table-header,
+  .table-row,
+  .table-cell,
+  .action-cell {
+    display: block;
+    width: 100%;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .table-row {
+    background-color: #f0f4ff;
+    margin-bottom: 16px;
+    padding: 25px 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(59, 109, 216, 0.15);
+    transform: none !important;
+  }
+
+  .table-cell {
+    display: flex;
+    padding: 8px 0;
+    justify-content: space-between;
+    border: none;
+    font-size: 1.1rem;
+  }
+
+  .table-cell::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #2b4370;
+    flex-basis: 35%;
+  }
+
+  .action-cell {
+    justify-content: flex-end;
+  }
+}
