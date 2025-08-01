@@ -43,7 +43,7 @@ bash
 npm start
 # or
 yarn start
-Open http://localhost:3000 to view it in the browser.
+Open http://localhost:5173 to view it in the browser.
 
 Project Structure
 App.jsx - Main React component rendering the product grid, cart panel, and managing cart state.
