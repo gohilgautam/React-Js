@@ -16,8 +16,7 @@
 - **JavaScript**
 - **Bootstrap (optional)**
 - **Media Queries**
-
-
+```
 project-root/
 │
 ├── public/
@@ -30,6 +29,7 @@ project-root/
 │
 ├── package.json
 └── README.md
+```
 
 
 🖨️ Print Resume
@@ -48,6 +48,7 @@ Phone: 9104826115
 This resume site was built to showcase my skills as a Full Stack Developer and provide a printable, professional representation of my experience and background.
 
 
-<img src="./public/image/Capture-1.PNG">
-<img src="./public/image/Capture-2.PNG">
-<img src="./public/image/Capture-3.PNG">
+
+![Screenshot 1](./public/image/Capture-1.PNG)  
+![Screenshot 2](./public/image/Capture-2.PNG)  
+![Screenshot 3](./public/image/Capture-3.PNG)  
