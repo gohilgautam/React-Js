@@ -1,12 +1,53 @@
-# React + Vite
+## 🚀 Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- 🖼️ Profile photo and personal introduction
+- 📧 Contact details with clickable email, GitHub, and LinkedIn
+- 🎓 Education section
+- 🌐 Languages spoken
+- 💻 Technical skills listed by category
+- 🖨️ One-click print functionality for physical copies or PDFs
+- 🎨 Simple and clean responsive design
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technologies Used
 
-## Expanding the ESLint configuration
+- **React.js**
+- **HTML5 & CSS3**
+- **JavaScript**
+- **Bootstrap (optional)**
+- **Media Queries**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+project-root/
+│
+├── public/
+│ ├── image/
+│ │ └── Gautam.jpg # Profile image
+│ └── App.css # CSS styles
+│
+├── src/
+│ └── App.jsx # Main resume component
+│
+├── package.json
+└── README.md
+
+
+🖨️ Print Resume
+Click on the "Print Resume" button at the bottom of the page to print or save the resume as a PDF directly from the browser.
+
+🔗 Connect with Me
+GitHub: gohilgautam
+
+LinkedIn: Gautam Gohil
+
+Email: gohilgautam2405@gmail.com
+
+Phone: 9104826115
+
+🙌 Acknowledgements
+This resume site was built to showcase my skills as a Full Stack Developer and provide a printable, professional representation of my experience and background.
+
+
+<img src="./public/image/Capture-1.PNG">
+<img src="./public/image/Capture-2.PNG">
+<img src="./public/image/Capture-3.PNG">
