@@ -76,4 +76,4 @@ The app will open at `http://localhost:5173`
 
 
 ## 📜 License
-[MIT License]('https://github.com/gohilgautam/MIT-Licence/blob/main/LICENSE')
+This project is licensed under the [MIT License](https://github.com/gohilgautam/MIT-Licence/blob/main/LICENSE)
