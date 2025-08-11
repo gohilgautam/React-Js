@@ -1,67 +1,96 @@
-# Student Table React App
+# 📚 Student Management Table (React.js)
 
-A responsive and accessible React application that displays a sortable table of student data, including roll number, name, class, section, and marks. The app features intuitive UI/UX design with smooth animations and mobile-friendly layout.
-
-## Features
-
-- List of 50 students with detailed info
-- Sortable table columns (Roll No, Name, Class, Section, Marks) with hover and focus styles
-- Editable and deletable actions for each student (UI only, no backend logic included)
-- Responsive design: table adapts to mobile screens with an accessible layout
-- Smooth hover animations on rows and action buttons
-- Visually hidden classes for accessibility support
-- Fully styled with CSS gradients, shadows, and transitions
-
-## Technologies Used
-
-- React (functional components with Hooks)
-- CSS for styling and responsive design
-- JSX for templating
-
-## Installation
-
-1. Clone the repository:
-
-
-2. Install dependencies:
-
-
-3. Start the development server:
-
-
-4. Open `http://localhost:3000` in your browser to view the app.
-
-## Usage
-
-- Click column headers to sort the table by that column (functionality to be implemented).
-- Use the Edit and Delete buttons for each student row (currently for UI demonstration).
-- On smaller screens, the table switches to a stacked layout for better readability.
-
-## Folder Structure
-
-/
-├── src/
-│ ├── App.jsx # Main React component containing student table
-│ ├── App.css # CSS styles for the table and UI
-│ └── main.jsx # Entry point for React DOM rendering
-└── public/
-└── index.html # Static HTML template
-
-## Accessibility
-
-- Uses `.visually-hidden` class for screen reader support
-- Focus styles on interactive elements for keyboard navigation
-- Semantic HTML table structure
-
-## Customization
-
-- Modify the `students` state array in `App.jsx` to change or add student records.
-- Extend sorting and editing functionalities by adding respective handlers and state management.
-
-## License
-
-This project is open source and free to use.
+A **React.js** project that displays a **stylish, responsive, sortable** table of students with their details such as Roll Number, Name, Class, Section, and Marks.  
+Includes **Edit** and **Delete** action buttons for future functionality.
 
 ---
 
-Feel free to customize this README further to fit any additional functionality or deployment information you may want to include.
+## 🚀 Features
+
+- 🎨 **Modern UI** with gradient backgrounds and shadows
+- 📱 **Fully Responsive** for mobile screens
+- 📊 Displays **50 student records** in a tabular format
+- 🔍 Prepared for **sorting functionality** (by default, clickable headers are styled)
+- 🖱 **Hover animations** on rows and buttons
+- ♿ Includes **accessibility styles** (visually hidden elements for screen readers)
+- 🎯 Made using **React Hooks** (`useState`)
+
+---
+
+## 📂 Project Structure
+
+```
+
+project-folder/
+│
+├── App.jsx # Main React component containing student data and table rendering
+├── App.css # Styling for table layout, buttons, and responsiveness
+├── package.json
+└── README.md
+
+```
+
+
+---
+
+## 🛠 Installation & Setup
+
+1️⃣ **Clone the repository**  
+
+
+2️⃣ **Install dependencies**  
+npm install
+
+3️⃣ **Start the development server**  
+npm start
+
+
+Now open **`http://localhost:5173`** in your browser. 🎉
+
+---
+
+## 💻 Usage
+
+- **Table Headers (⇅)** — clickable for sorting (future feature)
+- **Edit Button** — for editing student records (to be implemented)
+- **Delete Button** — for deleting records (to be implemented)
+- **Responsive Mode** — In mobile view, each row becomes a card-style block
+
+---
+
+## 🎨 Screenshots
+
+![Screenshot 1](./public/images/Capture-1.PNG)
+![Screenshot 2](./public/images/Capture-2.PNG)
+
+
+---
+
+## 📜 Technologies Used
+
+- **React.js** (Frontend Framework)
+- **CSS3** (Responsive & Animated Styling)
+- **JavaScript (ES6+)**  
+
+---
+
+## 📌 Future Improvements
+
+- ✅ Implement column sorting logic
+- ✅ Add search & filter functionality
+- ✅ Store and manage data using API / database
+- ✅ Implement edit & delete functionality with state updates
+
+---
+
+## 🧑‍💻 Author
+
+**Your Name**  
+💼 GitHub: [gohilgautam](https://github.com/gohilgautam)  
+📧 Email: gohilgautam2406@gmail.com  
+
+---
+
+## 📜 License
+This project is licensed under the [MIT License](https://github.com/gohilgautam/MIT-Licence/blob/main/LICENSE)
+
