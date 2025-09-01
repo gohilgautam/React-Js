@@ -1,5 +1,5 @@
 import StudentForm from "./components/studentForm";
-import NavbarPage from "./components/NavbarPage";
+import NavbarPage from "./components/navbarPage";
 
 function App() {
   return (

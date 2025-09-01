@@ -12,18 +12,9 @@ function StudentForm(props: any) {
   const [division, setDivision] = useState<string>("");
 
   const AllClasses: string[] = [
-    "Class 1",
-    "Class 2",
-    "Class 3",
-    "Class 4",
-    "Class 5",
-    "Class 6",
-    "Class 7",
-    "Class 8",
-    "Class 9",
-    "Class 10",
-    "Class 11",
-    "Class 12",
+    "Class 1", "Class 2", "Class 3", "Class 4", "Class 5",
+    "Class 6", "Class 7", "Class 8", "Class 9", "Class 10",
+    "Class 11", "Class 12",
   ];
   const AllHobbies = ["Reading", "Traveling", "Gaming", "Music"];
 
@@ -53,35 +44,33 @@ function StudentForm(props: any) {
     event.preventDefault();
 
     const student: StudentObject = {
-      Fname: Fname,
-      Lname : Lname,
-      age : age,
+      Fname,
+      Lname,
+      age,
       gender,
-      stdClass : stdClass,
-      hobbies : hobbies,
-      phone : phone,
-      address : address,
-      division : division,
+      stdClass,
+      hobbies,
+      phone,
+      address,
+      division,
     };
-
     console.log(student);
-    alert("Form submitted successfully!");
 
     props.setShowForm(!props.showForm);
   };
 
   if (props.showForm) {
     return (
-      <div className="flex items-center justify-center bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-6">
-        <div className="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6 text-center">
-            Student Registration
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 p-6">
+        <div className="w-full max-w-3xl bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-10">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">
+            🎓 Student Registration
           </h2>
 
-          <form className="space-y-5" onSubmit={studentSubmitForm}>
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={studentSubmitForm}>
             {/* First Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 First Name
               </label>
               <input
@@ -96,7 +85,7 @@ function StudentForm(props: any) {
 
             {/* Last Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Last Name
               </label>
               <input
@@ -111,7 +100,7 @@ function StudentForm(props: any) {
 
             {/* Age */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Age
               </label>
               <input
@@ -126,7 +115,7 @@ function StudentForm(props: any) {
 
             {/* Gender */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Gender
               </label>
               <div className="flex gap-6">
@@ -138,6 +127,7 @@ function StudentForm(props: any) {
                       value={g}
                       checked={gender === g}
                       onChange={(e) => setGender(e.target.value)}
+                      className="text-indigo-600"
                     />
                     {g}
                   </label>
@@ -147,7 +137,7 @@ function StudentForm(props: any) {
 
             {/* Class */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Class
               </label>
               <select
@@ -163,29 +153,24 @@ function StudentForm(props: any) {
               </select>
             </div>
 
-            {/* Hobbies */}
+            {/* Division */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Hobbies
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Division
               </label>
-              <div className="flex gap-6 flex-wrap">
-                {AllHobbies.map((hobby, index) => (
-                  <label key={index} className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      value={hobby}
-                      onChange={getAllHobbies}
-                      checked={hobbies.includes(hobby)}
-                    />
-                    {hobby}
-                  </label>
-                ))}
-              </div>
+              <input
+                type="text"
+                required
+                value={division}
+                onChange={(e) => setDivision(e.target.value)}
+                placeholder="A / B / C"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:text-white"
+              />
             </div>
 
             {/* Phone */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Phone Number
               </label>
               <input
@@ -199,8 +184,8 @@ function StudentForm(props: any) {
             </div>
 
             {/* Address */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Address
               </label>
               <textarea
@@ -212,28 +197,36 @@ function StudentForm(props: any) {
               />
             </div>
 
-            {/* Division */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Division
+            {/* Hobbies */}
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Hobbies
               </label>
-              <input
-                type="text"
-                required
-                value={division}
-                onChange={(e) => setDivision(e.target.value)}
-                placeholder="A / B / C"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:text-white"
-              />
+              <div className="flex gap-6 flex-wrap">
+                {AllHobbies.map((hobby, index) => (
+                  <label key={index} className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      value={hobby}
+                      onChange={getAllHobbies}
+                      checked={hobbies.includes(hobby)}
+                      className="text-indigo-600"
+                    />
+                    {hobby}
+                  </label>
+                ))}
+              </div>
             </div>
-            
+
             {/* Submit */}
-            <button
-              type="submit"
-              className="w-full py-3 text-white bg-indigo-800 hover:bg-indigo-700 rounded-lg font-medium shadow-md transition"
-            >
-              Submit
-            </button>
+            <div className="md:col-span-2">
+              <button
+                type="submit"
+                className="w-full py-3 text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-lg font-semibold shadow-lg transition"
+              >
+                🚀 Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -242,23 +235,20 @@ function StudentForm(props: any) {
     // Table view after form submit
     return (
       <div className="m-8">
-        <div className="overflow-x-auto shadow-xl rounded-2xl border border-gray-200">
-          <table className="w-full text-sm text-left text-gray-600">
-            <thead className="bg-gradient-to-r from-indigo-500 to-purple-900 text-white text-xs uppercase">
+        <div className="overflow-x-auto shadow-2xl rounded-2xl border border-gray-200">
+          <table className="w-full text-sm text-left text-gray-700">
+            <thead className="bg-gradient-to-r from-indigo-600 to-purple-800 text-white text-sm uppercase">
               <tr>
-                <th className="px-6 py-4">First Name</th>
-                <th className="px-6 py-4">Last Name</th>
-                <th className="px-6 py-4">Age</th>
-                <th className="px-6 py-4">Gender</th>
-                <th className="px-6 py-4">Class</th>
-                <th className="px-6 py-4">Division</th>
-                <th className="px-6 py-4">Phone</th>
-                <th className="px-6 py-4">Hobbies</th>
-                <th className="px-6 py-4">Address</th>
+                {[
+                  "First Name","Last Name","Age","Gender","Class",
+                  "Division","Phone","Hobbies","Address",
+                ].map((head, index) => (
+                  <th key={index} className="px-6 py-4">{head}</th>
+                ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
-              <tr>
+            <tbody className="divide-y divide-gray-200 bg-white dark:bg-gray-800 dark:text-white">
+              <tr className="hover:bg-gray-50 dark:hover:bg-gray-700 transition">
                 <td className="px-6 py-4">{Fname}</td>
                 <td className="px-6 py-4">{Lname}</td>
                 <td className="px-6 py-4">{age}</td>
