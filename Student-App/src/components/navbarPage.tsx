@@ -1,12 +1,12 @@
-
 export default function Navbar() {
   return (
     <nav className="w-full rounded-b-2xl bg-gradient-to-r from-gray-800 to-slate-900 shadow-2xl transition-all duration-300">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5">
+        {/* Logo */}
         <a href="#" className="flex items-center space-x-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-indigo-400 drop-shadow-md transition-transform duration-300 hover:scale-110"
+            className="h-8 w-8 text-indigo-400 drop-shadow-md transition-transform duration-300 hover:rotate-12 hover:scale-125"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -28,30 +28,22 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <ul className="flex space-x-8">
-          <li>
-            <a
-              href="#"
-              className="group flex items-center space-x-2 rounded-md px-4 py-2 text-gray-300 transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:text-indigo-400"
-            >
-              <span>Home</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="group flex items-center space-x-2 rounded-md px-4 py-2 text-gray-300 transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:text-indigo-400"
-            >
-              <span>Students</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="group flex items-center space-x-2 rounded-md px-4 py-2 text-gray-300 transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:text-indigo-400"
-            >
-              <span>About</span>
-            </a>
-          </li>
+          {["Home", "Students", "About"].map((item) => (
+            <li key={item}>
+              <a
+                href="#"
+                className="group relative flex items-center space-x-2 rounded-md px-4 py-2 text-gray-300 font-medium transition-all duration-300 hover:scale-110 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-indigo-400 hover:to-blue-500"
+              >
+                <span>{item}</span>
+
+                {/* Underline animation */}
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-indigo-400 to-blue-500 transition-all duration-500 group-hover:w-full"></span>
+
+                {/* Glow effect */}
+                <span className="absolute inset-0 rounded-md opacity-0 transition group-hover:opacity-30 group-hover:shadow-[0_0_15px_3px_rgba(99,102,241,0.6)]"></span>
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

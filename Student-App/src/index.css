@@ -7,7 +7,6 @@
 html, body { height: 100%; margin: 0; }
 body {
   font-family: Arial, sans-serif;
-  background: url("../public/images/Background.jpg") center center / cover no-repeat fixed; /* page image */
   display: grid;
   place-items: center;
   color: #0f172a;
