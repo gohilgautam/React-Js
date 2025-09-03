@@ -1,69 +1,73 @@
-# React + TypeScript + Vite
+# 🎓 Student Registration Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and modern **Student Registration Portal** built with **React + TypeScript** and styled using **Tailwind CSS**.  
+The app allows users to **register students** via a form and displays the data in a responsive, styled table.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 📋 **Student Registration Form**
+  - First Name, Last Name, Age, Gender, Phone, Email, Course, Address  
+  - Gender selection with radio buttons  
+  - Dropdown list for courses  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🎨 **Modern UI**
+  - Fully responsive design  
+  - Gradient backgrounds  
+  - Styled inputs and buttons with hover effects  
+  - White label text for better readability  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 📊 **Student Table**
+  - Displays all registered students  
+  - Alternating row colors  
+  - Hover effects for rows  
+  - "No students registered yet..." fallback  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+## 🖼️ Screenshots
+
+### 📝 Registration Form
+![Form Screenshot](./public/images/Capture-1.png)
+![Form Screenshot](./public/images/Capture-3.png)
+
+### 📊 Registered Students Table
+![Table Screenshot](./public/images/Capture-2.png)
+
+
+
+## 🛠️ Tech Stack
+
+- **React** (with Hooks & TypeScript) ⚛️  
+- **Tailwind CSS** 🌈  
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/student-registration-portal.git
+cd student-registration-portal
+
+npm install
+
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open your browser at 👉 http://localhost:5173
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+src/
+ ├── components/
+ │    └── StudentForm.tsx   # Main form + table component
+ │    └── Navbar.tsx        # Navigation bar
+ ├── App.tsx                # App entry point
+ ├── main.tsx               # React DOM render
+ └
+
 ```
