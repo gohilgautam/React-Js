@@ -1,16 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import Swal from "sweetalert2";
+import "react-toastify/dist/ReactToastify.css";
 
 function StudentForm() {
-  const [FirstName, setFirstName] = useState<string>("");
-  const [LastName, setLastName] = useState<string>("");
-  const [Age, setAge] = useState<string>("");
-  const [Gender, setGender] = useState<string>("");
-  const [Phone, setPhone] = useState<string>("");
-  const [Email, setEmail] = useState<string>("");
-  const [Course, setCourse] = useState<string>("");
-  const [Address, setAddress] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [age, setAge] = useState<string>("");
+  const [gender, setGender] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [course, setCourse] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
 
-  const [studentList, setStudentList] = useState<studentObject[]>([]);
+  const [error, setError] = useState<any>({});
+  const [students, setStudents] = useState<Student[]>(
+    JSON.parse(localStorage.getItem("students") || "[]")
+  );
+  const [editId, setEditId] = useState<number>();
+
+  type Student = {
+    firstName: string;
+    lastName: string;
+    age: string;
+    gender: string;
+    phone: string;
+    email: string;
+    course: string;
+    address: string;
+  };
 
   const allCourses: string[] = [
     "Science",
@@ -20,34 +38,61 @@ function StudentForm() {
     "Medical",
   ];
 
-  type studentObject = {
-    FirstName: string;
-    LastName: string;
-    Age: string;
-    Gender: string;
-    Phone: string;
-    Email: string;
-    Course: string;
-    Address: string;
+  useEffect(() => {
+    localStorage.setItem("students", JSON.stringify(students));
+  }, [students]);
+
+  const validate = () => {
+    const newError: any = {};
+    if (!firstName.trim()) newError.firstName = "First Name is required";
+    if (!lastName.trim()) newError.lastName = "Last Name is required";
+    if (!age.trim()) newError.age = "Age is required";
+    else if (parseInt(age) <= 0) newError.age = "Invalid age";
+    if (!gender.trim()) newError.gender = "Gender is required";
+    if (!phone.trim()) newError.phone = "Phone is required";
+    else if (!/^[0-9]{10}$/.test(phone)) newError.phone = "Invalid phone";
+    if (!email.trim()) newError.email = "Email is required";
+    else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
+    )
+      newError.email = "Invalid email";
+    if (!course.trim()) newError.course = "Course is required";
+    if (!address.trim()) newError.address = "Address is required";
+
+    setError(newError);
+    return Object.keys(newError).length;
   };
 
-  const submitStudentForm = (event: any) => {
-    event.preventDefault();
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (validate() !== 0) return;
 
-    const student: studentObject = {
-      FirstName,
-      LastName,
-      Age,
-      Gender,
-      Phone,
-      Email,
-      Course,
-      Address,
+    const student: Student = {
+      firstName,
+      lastName,
+      age,
+      gender,
+      phone,
+      email,
+      course,
+      address,
     };
 
-    setStudentList([...studentList, student]);
+    if (editId === undefined) {
+      setStudents([...students, student]);
+      toast.success("Student added successfully!");
+    } else {
+      const updated = students.map((s, i) =>
+        i === editId ? student : s
+      );
+      setStudents(updated);
+      toast.success("Student updated successfully!");
+    }
 
-    // Reset form
+    resetForm();
+  };
+
+  const resetForm = () => {
     setFirstName("");
     setLastName("");
     setAge("");
@@ -56,222 +101,270 @@ function StudentForm() {
     setEmail("");
     setCourse("");
     setAddress("");
+    setEditId(undefined);
   };
 
+  const handleEdit = (i: number) => {
+    setEditId(i);
+    const s = students[i];
+    setFirstName(s.firstName);
+    setLastName(s.lastName);
+    setAge(s.age);
+    setGender(s.gender);
+    setPhone(s.phone);
+    setEmail(s.email);
+    setCourse(s.course);
+    setAddress(s.address);
+  };
+
+  const handleDelete = (i: number) => {
+    Swal.fire({
+      title: "⚠️ Are you absolutely sure?",
+      text: "Once deleted, this student's record cannot be recovered!",
+      icon: "warning",
+      iconColor: "#e74c3c",
+      showCancelButton: true,
+      confirmButtonText: "✅ Yes, delete it!",
+      cancelButtonText: "❌ Cancel",
+      confirmButtonColor: "#e74c3c",
+      cancelButtonColor: "#6c757d",
+      background: "#1e293b",
+      color: "#f8fafc",
+      showClass: {
+        popup: "animate__animated animate__zoomIn faster",
+      },
+      hideClass: {
+        popup: "animate__animated animate__zoomOut faster",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setStudents(students.filter((_, idx) => idx !== i));
+        Swal.fire({
+          title: "🎉 Deleted Successfully!",
+          text: "The student record has been removed.",
+          icon: "success",
+          confirmButtonColor: "#22c55e",
+          background: "#f0fdf4",
+          color: "#065f46",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+      }
+    });
+  }
+
+
   return (
-    <div className="flex flex-col items-center py-16 px-6 bg-gradient-to-br from-indigo-100 via-blue-50 to-indigo-200 min-h-screen">
-      {/* Form Card */}
-      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-2xl p-10 border border-indigo-100">
-        <h2 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500 mb-10 drop-shadow-md">
-          🎓 Student Registration Form
+    <>
+      {/* Form */}
+      <form onSubmit={handleSubmit} className="space-y-7 mt-5">
+        <h2 className="text-2xl font-bold text-center text-white">
+          {editId !== undefined ? "Update Student" : "Student Registration"}
         </h2>
-        <form
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          onSubmit={submitStudentForm}
-        >
-          {/* First Name */}
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-white mb-2">
+
+        {/* Name */}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm font-medium text-white">
               First Name
             </label>
             <input
               type="text"
-              value={FirstName}
+              value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              placeholder="Enter first name"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-              required
+              className={`w-full p-2 border rounded-lg ${error.firstName ? "border-red-500" : "border-gray-300"
+                }`}
             />
+            {error.firstName && (
+              <p className="text-red-400 text-xs">{error.firstName}</p>
+            )}
           </div>
-
-          {/* Last Name */}
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-white mb-2">
+          <div>
+            <label className="text-sm font-medium text-white">
               Last Name
             </label>
             <input
               type="text"
-              value={LastName}
+              value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              placeholder="Enter last name"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-              required
+              className={`w-full p-2 border rounded-lg ${error.lastName ? "border-red-500" : "border-gray-300"
+                }`}
             />
+            {error.lastName && (
+              <p className="text-red-400 text-xs">{error.lastName}</p>
+            )}
           </div>
+        </div>
 
-          {/* Age */}
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-white mb-2">
-              Age
-            </label>
-            <input
-              type="number"
-              value={Age}
-              onChange={(e) => setAge(e.target.value)}
-              placeholder="Enter age"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-              required
-            />
+        {/* Age */}
+        <div>
+          <label className="text-sm font-medium text-white">Age</label>
+          <input
+            type="number"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            className={`w-full p-2 border rounded-lg ${error.age ? "border-red-500" : "border-gray-300"
+              }`}
+          />
+          {error.age && (
+            <p className="text-red-400 text-xs">{error.age}</p>
+          )}
+        </div>
+
+        {/* Gender */}
+        <div>
+          <label className="text-sm font-medium text-white">Gender</label>
+          <div className="flex gap-4 mt-1 text-white">
+            {["Male", "Female"].map((g) => (
+              <label key={g} className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  value={g}
+                  checked={gender === g}
+                  onChange={(e) => setGender(e.target.value)}
+                />
+                {g}
+              </label>
+            ))}
           </div>
+          {error.gender && (
+            <p className="text-red-400 text-xs">{error.gender}</p>
+          )}
+        </div>
 
-          {/* Gender */}
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-white mb-2">
-              Gender
-            </label>
-            <div className="flex gap-4">
-              {["Male", "Female"].map((g) => (
-                <label
-                  key={g}
-                  className={`flex-1 text-center cursor-pointer rounded-lg border px-4 py-2 transition ${Gender === g
-                      ? "bg-indigo-600 text-white"
-                      : "bg-gray-50 hover:bg-indigo-50 text-gray-700"
-                    }`}
-                >
-                  <input
-                    type="radio"
-                    name="gender"
-                    value={g}
-                    checked={Gender === g}
-                    onChange={(e) => setGender(e.target.value)}
-                    className="hidden"
-                  />
-                  {g}
-                </label>
-              ))}
-            </div>
-          </div>
+        {/* Phone */}
+        <div>
+          <label className="text-sm font-medium text-white">Phone</label>
+          <input
+            type="text"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className={`w-full p-2 border rounded-lg ${error.phone ? "border-red-500" : "border-gray-300"
+              }`}
+          />
+          {error.phone && (
+            <p className="text-red-400 text-xs">{error.phone}</p>
+          )}
+        </div>
 
-          {/* Phone */}
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-white mb-2">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              value={Phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="Enter 10-digit number"
-              pattern="[0-9]{10}"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-              required
-            />
-          </div>
+        {/* Email */}
+        <div>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={`w-full p-2 border rounded-lg ${error.email ? "border-red-500" : "border-gray-300"
+              }`}
+          />
+          {error.email && (
+            <p className="text-red-400 text-xs">{error.email}</p>
+          )}
+        </div>
 
-          {/* Email */}
-          <div className="flex flex-col">
-            <label className="text-sm font-medium text-white mb-2">
-              Email Address
-            </label>
-            <input
-              type="email"
-              value={Email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-            />
-          </div>
+        {/* Course */}
+        <div>
+          <label className="text-sm font-medium text-white">Course</label>
+          <select
+            value={course}
+            onChange={(e) => setCourse(e.target.value)}
+            className={`w-full p-2 border rounded-lg ${error.course ? "border-red-500" : "border-gray-300"
+              }`}
+          >
+            <option value="">Select</option>
+            {allCourses.map((c, i) => (
+              <option key={i}>{c}</option>
+            ))}
+          </select>
+          {error.course && (
+            <p className="text-red-400 text-xs">{error.course}</p>
+          )}
+        </div>
 
-          {/* Course */}
-          <div className="md:col-span-2 flex flex-col">
-            <label className="text-sm font-medium text-white mb-2">
-              Course
-            </label>
-            <select
-              value={Course}
-              onChange={(e) => setCourse(e.target.value)}
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-              required
-            >
-              <option value="" disabled>
-                Select course
-              </option>
-              {allCourses.map((course, index) => (
-                <option key={index}>{course}</option>
-              ))}
-            </select>
-          </div>
+        {/* Address */}
+        <div>
+          <label className="text-sm font-medium text-white">Address</label>
+          <textarea
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            className={`w-full p-2 border rounded-lg ${error.address ? "border-red-500" : "border-gray-300"
+              }`}
+          />
+          {error.address && (
+            <p className="text-red-400 text-xs">{error.address}</p>
+          )}
+        </div>
 
-          {/* Address */}
-          <div className="md:col-span-2 flex flex-col">
-            <label className="text-sm font-medium text-white mb-2">
-              Address
-            </label>
-            <textarea
-              value={Address}
-              onChange={(e) => setAddress(e.target.value)}
-              placeholder="Enter full address"
-              rows={3}
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-              required
-            />
-          </div>
-
-          {/* Submit */}
-          <div className="md:col-span-2">
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-semibold py-3 rounded-lg shadow-md hover:scale-[1.02] transition"
-            >
-              Register Student
-            </button>
-          </div>
-        </form>
-
-      </div>
+        {/* Submit */}
+        <button
+          type="submit"
+          className={`w-full py-2 rounded-lg text-white ${editId === undefined
+            ? "bg-blue-600 hover:bg-blue-700"
+            : "bg-yellow-500 hover:bg-yellow-600"
+            }`}
+        >
+          {editId === undefined ? "Add Student" : "Update Student"}
+        </button>
+      </form>
 
       {/* Table */}
-      <div className="mt-16 w-full max-w-6xl mx-auto">
-        <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500 mb-6 text-center">
-          📋 Registered Students
-        </h3>
-        <div className="overflow-x-auto rounded-2xl shadow-xl border border-gray-200">
-          <table className="w-full text-sm text-gray-700">
-            <thead className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white uppercase text-xs tracking-wider">
+      <div className="max-w-6xl mx-auto mt-12">
+        <h2 className="text-2xl font-bold text-center mb-6 text-white">
+          Students List
+        </h2>
+        <div className="overflow-x-auto border rounded-xl shadow-lg bg-gray-900 text-white">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-700 text-white">
               <tr>
                 {[
-                  "First Name",
-                  "Last Name",
+                  "No",
+                  "First",
+                  "Last",
                   "Age",
                   "Gender",
                   "Phone",
                   "Email",
                   "Course",
                   "Address",
-                ].map((heading, idx) => (
-                  <th
-                    key={idx}
-                    className="px-6 py-4 text-center font-semibold"
-                  >
-                    {heading}
+                  "Action",
+                ].map((h, i) => (
+                  <th key={i} className="px-4 py-2 text-left">
+                    {h}
                   </th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {studentList.map((student, index) => (
-                <tr
-                  key={index}
-                  className={`transition ${index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                    } hover:bg-indigo-50 hover:shadow-md`}
-                >
-                  <td className="px-6 py-4 text-center">{student.FirstName}</td>
-                  <td className="px-6 py-4 text-center">{student.LastName}</td>
-                  <td className="px-6 py-4 text-center">{student.Age}</td>
-                  <td className="px-6 py-4 text-center">{student.Gender}</td>
-                  <td className="px-6 py-4 text-center">{student.Phone}</td>
-                  <td className="px-6 py-4 text-center">{student.Email}</td>
-                  <td className="px-6 py-4 text-center">{student.Course}</td>
-                  <td className="px-6 py-4 text-center">{student.Address}</td>
+              {students.map((s, i) => (
+                <tr key={i} className="border-t border-gray-700 hover:bg-gray-800">
+                  <td className="px-4 py-2">{i + 1}</td>
+                  <td className="px-4 py-2">{s.firstName}</td>
+                  <td className="px-4 py-2">{s.lastName}</td>
+                  <td className="px-4 py-2">{s.age}</td>
+                  <td className="px-4 py-2">{s.gender}</td>
+                  <td className="px-4 py-2">{s.phone}</td>
+                  <td className="px-4 py-2">{s.email}</td>
+                  <td className="px-4 py-2">{s.course}</td>
+                  <td className="px-4 py-2">{s.address}</td>
+                  <td className="px-4 py-2 flex gap-2">
+                    <button
+                      onClick={() => handleEdit(i)}
+                      className="px-3 py-1 text-xs rounded bg-yellow-400 text-white hover:bg-yellow-500"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => handleDelete(i)}
+                      className="px-3 py-1 text-xs rounded bg-red-500 text-white hover:bg-red-600"
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
-              {studentList.length === 0 && (
+              {students.length === 0 && (
                 <tr>
-                  <td
-                    colSpan={8}
-                    className="text-center py-6 text-gray-500 italic"
-                  >
-                    No students registered yet...
+                  <td colSpan={10} className="text-center py-4 text-gray-400">
+                    No students yet...
                   </td>
                 </tr>
               )}
@@ -279,7 +372,9 @@ function StudentForm() {
           </table>
         </div>
       </div>
-    </div>
+
+      <ToastContainer />
+    </>
   );
 }
 
