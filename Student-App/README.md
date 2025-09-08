@@ -29,14 +29,22 @@ The app allows users to **register students** via a form and displays the data i
 
 ## 🖼️ Screenshots
 
+### Navbar
+
+![Navbar Screenshot](./public/images/Capture-1.png)
+
 ### 📝 Registration Form
-![Form Screenshot](./public/images/Capture-1.png)
-![Form Screenshot](./public/images/Capture-3.png)
+
+![Form Screenshot](./public/images/Capture-2.png)
 
 ### 📊 Registered Students Table
-![Table Screenshot](./public/images/Capture-2.png)
+![Table Screenshot](./public/images/Capture-3.png)
 
+### 📊 Update Students Table
+![Update Screenshot](./public/images/Capture-4.png)
 
+### 🚮 Delete Students
+![Delete Screenshot](./public/images/Capture-5.png)
 
 ## 🛠️ Tech Stack
 
