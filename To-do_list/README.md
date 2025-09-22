@@ -84,3 +84,8 @@ Rose Gold 🌸
 📸 Screenshots
 
 (Add screenshots of your app here)
+
+![Screenshot 1](./public/image/Capture-1.png),
+![Screenshot 2](./public/image/Capture-2.png),
+![Screenshot 3](./public/image/Capture-3.png),
+![Screenshot 4](./public/image/Capture-4.png),
