@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
+import { Outlet } from 'react-router-dom'
 
 export default function App() {
   return (
@@ -8,7 +9,7 @@ export default function App() {
       <Header/>
 
       <main className="flex-grow flex justify-center items-center">
-        {/* <MyRoutes /> */}
+        <Outlet/>
       </main>
 
       <Footer/>
