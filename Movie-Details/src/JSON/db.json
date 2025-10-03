@@ -1,0 +1,204 @@
+{
+  "movies": [
+    {
+      "id": "101",
+      "name": "Inception",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDIbEXG980t7Ojq2IE-nb7nHXYco6tqI5FA&s",
+      "price": "14.99",
+      "category": "Sci-Fi",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/inception_trailer.mp4",
+      "description": "A skilled thief is given a chance at redemption if he can successfully perform an inception."
+    },
+    {
+      "id": "102",
+      "name": "The Dark Knight",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnzRlYjmb6Cj5wXivADpxjlQYebENp2e36wA&s",
+      "price": "12.99",
+      "category": "Action",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/darkknight_trailer.mp4",
+      "description": "Batman must fight the Joker, a criminal mastermind who wants to plunge Gotham City into chaos."
+    },
+    {
+      "id": "103",
+      "name": "Interstellar",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4uvZy8nxxWoagFOc-HYuQpMFlv3HG9ZrggA&s",
+      "price": "15.99",
+      "category": "Sci-Fi",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/interstellar_trailer.mp4",
+      "description": "A team of explorers travel through a wormhole in space to ensure humanity's survival."
+    },
+    {
+      "id": "104",
+      "name": "Avengers: Endgame",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCvlemM7U0s-DKDyu8m7o1SSCEJEt-5vlGDA&s",
+      "price": "19.99",
+      "category": "Action",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/endgame_trailer.mp4",
+      "description": "The Avengers assemble once more to reverse the damage caused by Thanos and restore the universe."
+    },
+    {
+      "id": "105",
+      "name": "The Matrix",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6t5nPmaAZ7aqDs_Kml2RY_tp12qN0c0C2Iw&s",
+      "price": "13.99",
+      "category": "Sci-Fi",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/matrix_trailer.mp4",
+      "description": "A hacker discovers the world he lives in is a simulated reality controlled by machines."
+    },
+    {
+      "id": "106",
+      "name": "Titanic",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLTdn_SUDdwxAzEpb7b91lLwp79c0HC0mDOw&s",
+      "price": "11.99",
+      "category": "Romance",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/titanic_trailer.mp4",
+      "description": "A love story unfolds aboard the ill-fated RMS Titanic."
+    },
+    {
+      "id": "107",
+      "name": "Gladiator",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlmhsUo2pUYUny3IeUOLl_EqKcJ3m5yoUfJA&s",
+      "price": "12.99",
+      "category": "Action",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/gladiator_trailer.mp4",
+      "description": "A former Roman General seeks revenge after being betrayed and his family murdered."
+    },
+    {
+      "id": "108",
+      "name": "Jurassic Park",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReYq9S27nbhgOaXtv7G6HTgNv7AGaA51tI_w&s",
+      "price": "13.99",
+      "category": "Adventure",
+      "rating": "4.6",
+      "trailer": "https://example.com/videos/jurassicpark_trailer.mp4",
+      "description": "A theme park full of cloned dinosaurs becomes a nightmare when the creatures escape."
+    },
+    {
+      "id": "109",
+      "name": "Forrest Gump",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTza4mpWKQml3QWkuE1ym6PpU58x-oKLueDnQ&s",
+      "price": "12.99",
+      "category": "Drama",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/forrestgump_trailer.mp4",
+      "description": "The extraordinary life journey of Forrest Gump, a man with a kind heart and low IQ."
+    },
+    {
+      "id": "110",
+      "name": "The Lord of the Rings: The Fellowship of the Ring",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5o13sfGSE7fo3onrgeUdox2PAtBPNYoxJCg&s",
+      "price": "15.99",
+      "category": "Fantasy",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/lotr1_trailer.mp4",
+      "description": "A hobbit sets out on a journey to destroy the One Ring and save Middle-earth."
+    },
+    {
+      "id": "111",
+      "name": "Avatar",
+      "image": "https://m.media-amazon.com/images/I/71K0q-101aL._UF1000,1000_QL80_.jpg",
+      "price": "16.99",
+      "category": "Sci-Fi",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/avatar_trailer.mp4",
+      "description": "A paraplegic marine is sent to the alien world of Pandora on a unique mission."
+    },
+    {
+      "id": "112",
+      "name": "The Godfather",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ONAFCm09YuZh2j8VaAbN93jnqfZzjsV69g&s",
+      "price": "14.99",
+      "category": "Crime",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/godfather_trailer.mp4",
+      "description": "The aging patriarch of an organized crime dynasty transfers control to his reluctant son."
+    },
+    {
+      "id": "113",
+      "name": "Pulp Fiction",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHcUqyJEudKVEyOkUBAdMLeER1lMAsEnFMug&s",
+      "price": "13.99",
+      "category": "Crime",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/pulpfiction_trailer.mp4",
+      "description": "The lives of two mob hitmen, a boxer, and a pair of diner bandits intertwine in a series of tales."
+    },
+    {
+      "id": "114",
+      "name": "Shutter Island",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx4MglAqlpJVV9xuZh5Oa6Nl-MfZt7tALD2Q&s",
+      "price": "12.99",
+      "category": "Thriller",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/shutterisland_trailer.mp4",
+      "description": "A U.S. Marshal investigates a psychiatric facility on an isolated island after a patient goes missing."
+    },
+    {
+      "id": "115",
+      "name": "The Lion King",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqErxl8720eNh7n40I-ljQl5FHsjLFWo7MlA&s",
+      "price": "11.99",
+      "category": "Animation",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/lionking_trailer.mp4",
+      "description": "A young lion prince flees his kingdom after the murder of his father, only to learn the true meaning of responsibility and bravery."
+    },
+    {
+      "id": "116",
+      "name": "Frozen",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStMhpwGHuRpcjeOLHkvXvyvwliC_u-lnxt2g&s",
+      "price": "12.99",
+      "category": "Animation",
+      "rating": "4.6",
+      "trailer": "https://example.com/videos/frozen_trailer.mp4",
+      "description": "Princess Anna sets out on a journey to save her kingdom from eternal winter."
+    },
+    {
+      "id": "117",
+      "name": "The Avengers",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3VBtt6532KFJvt31DlXx7GkzawX_F3_oKww&s",
+      "price": "15.99",
+      "category": "Action",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/avengers_trailer.mp4",
+      "description": "Earth's mightiest heroes must come together to stop Loki and his alien army."
+    },
+    {
+      "id": "118",
+      "name": "Spider-Man: No Way Home",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWm6a4owdhYJdjT6D9av_Kk8VWXyGw7vNrGg&s",
+      "price": "17.99",
+      "category": "Action",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/spiderman_trailer.mp4",
+      "description": "Peter Parker faces multiverse villains and the consequences of revealing his identity."
+    },
+    {
+      "id": "119",
+      "name": "Guardians of the Galaxy",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf759gBLgceWl27BwySkEUWlj1mKtyLeOHEw&s",
+      "price": "14.99",
+      "category": "Action",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/guardians_trailer.mp4",
+      "description": "A group of intergalactic criminals must pull together to stop a fanatical warrior from taking control of the universe."
+    },
+    {
+      "id": "120",
+      "name": "Black Panther",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO7bTiAQXpYtoSRVnLngM0FoLOkoGYKShrhQ&s",
+      "price": "15.99",
+      "category": "Action",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/blackpanther_trailer.mp4",
+      "description": "T’Challa returns home to the African nation of Wakanda to take his rightful place as king and protector."
+    }
+  ]
+}
