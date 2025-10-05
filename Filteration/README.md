@@ -7,21 +7,6 @@
 
 A modern movie management application built with React, TypeScript, and Vite. Allows users to view, add, edit, and delete movies with a beautiful UI.
 
-## Table of Contents
-
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [API Details](#api-details)
-- [Routes](#routes)
-- [Folder Structure](#folder-structure)
-- [Screenshots](#screenshots)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 - **View Movies**: Browse all movies on the home page with detailed cards.
