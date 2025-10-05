@@ -1,0 +1,204 @@
+{
+  "movies": [
+    {
+      "id": "101",
+      "name": "Inception",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDIbEXG980t7Ojq2IE-nb7nHXYco6tqI5FA&s",
+      "price": "14.99",
+      "category": "Sci-Fi",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/inception_trailer.mp4",
+      "description": "A skilled thief is given a chance at redemption if he can successfully perform an inception."
+    },
+    {
+      "id": "102",
+      "name": "The Dark Knight",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnzRlYjmb6Cj5wXivADpxjlQYebENp2e36wA&s",
+      "price": "13.99",
+      "category": "Action",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/darkknight_trailer.mp4",
+      "description": "Batman must fight the Joker, a criminal mastermind who wants to plunge Gotham City into chaos."
+    },
+    {
+      "id": "103",
+      "name": "Interstellar",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4uvZy8nxxWoagFOc-HYuQpMFlv3HG9ZrggA&s",
+      "price": "15.99",
+      "category": "Sci-Fi",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/interstellar_trailer.mp4",
+      "description": "A team of explorers travel through a wormhole in space to ensure humanity's survival."
+    },
+    {
+      "id": "104",
+      "name": "Avengers: Endgame",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCvlemM7U0s-DKDyu8m7o1SSCEJEt-5vlGDA&s",
+      "price": "19.99",
+      "category": "Action",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/endgame_trailer.mp4",
+      "description": "The Avengers assemble once more to reverse the damage caused by Thanos and restore the universe."
+    },
+    {
+      "id": "105",
+      "name": "The Matrix",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6t5nPmaAZ7aqDs_Kml2RY_tp12qN0c0C2Iw&s",
+      "price": "13.99",
+      "category": "Sci-Fi",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/matrix_trailer.mp4",
+      "description": "A hacker discovers the world he lives in is a simulated reality controlled by machines."
+    },
+    {
+      "id": "107",
+      "name": "Gladiator",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlmhsUo2pUYUny3IeUOLl_EqKcJ3m5yoUfJA&s",
+      "price": "12.99",
+      "category": "Action",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/gladiator_trailer.mp4",
+      "description": "A former Roman General seeks revenge after being betrayed and his family murdered."
+    },
+    {
+      "id": "108",
+      "name": "Jurassic Park",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReYq9S27nbhgOaXtv7G6HTgNv7AGaA51tI_w&s",
+      "price": "13.99",
+      "category": "Adventure",
+      "rating": "4.6",
+      "trailer": "https://example.com/videos/jurassicpark_trailer.mp4",
+      "description": "A theme park full of cloned dinosaurs becomes a nightmare when the creatures escape."
+    },
+    {
+      "id": "109",
+      "name": "Forrest Gump",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTza4mpWKQml3QWkuE1ym6PpU58x-oKLueDnQ&s",
+      "price": "12.99",
+      "category": "Drama",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/forrestgump_trailer.mp4",
+      "description": "The extraordinary life journey of Forrest Gump, a man with a kind heart and low IQ."
+    },
+    {
+      "id": "110",
+      "name": "The Lord of the Rings: The Fellowship of the Ring",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5o13sfGSE7fo3onrgeUdox2PAtBPNYoxJCg&s",
+      "price": "15.99",
+      "category": "Fantasy",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/lotr1_trailer.mp4",
+      "description": "A hobbit sets out on a journey to destroy the One Ring and save Middle-earth."
+    },
+    {
+      "id": "111",
+      "name": "Avatar",
+      "image": "https://m.media-amazon.com/images/I/71K0q-101aL._UF1000,1000_QL80_.jpg",
+      "price": "16.99",
+      "category": "Sci-Fi",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/avatar_trailer.mp4",
+      "description": "A paraplegic marine is sent to the alien world of Pandora on a unique mission."
+    },
+    {
+      "id": "112",
+      "name": "The Godfather",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ONAFCm09YuZh2j8VaAbN93jnqfZzjsV69g&s",
+      "price": "14.99",
+      "category": "Crime",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/godfather_trailer.mp4",
+      "description": "The aging patriarch of an organized crime dynasty transfers control to his reluctant son."
+    },
+    {
+      "id": "113",
+      "name": "Pulp Fiction",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHcUqyJEudKVEyOkUBAdMLeER1lMAsEnFMug&s",
+      "price": "13.99",
+      "category": "Crime",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/pulpfiction_trailer.mp4",
+      "description": "The lives of two mob hitmen, a boxer, and a pair of diner bandits intertwine in a series of tales."
+    },
+    {
+      "id": "114",
+      "name": "Shutter Island",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx4MglAqlpJVV9xuZh5Oa6Nl-MfZt7tALD2Q&s",
+      "price": "12.99",
+      "category": "Thriller",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/shutterisland_trailer.mp4",
+      "description": "A U.S. Marshal investigates a psychiatric facility on an isolated island after a patient goes missing."
+    },
+    {
+      "id": "115",
+      "name": "The Lion King",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqErxl8720eNh7n40I-ljQl5FHsjLFWo7MlA&s",
+      "price": "11.99",
+      "category": "Animation",
+      "rating": "4.9",
+      "trailer": "https://example.com/videos/lionking_trailer.mp4",
+      "description": "A young lion prince flees his kingdom after the murder of his father, only to learn the true meaning of responsibility and bravery."
+    },
+    {
+      "id": "116",
+      "name": "Frozen",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStMhpwGHuRpcjeOLHkvXvyvwliC_u-lnxt2g&s",
+      "price": "12.33",
+      "category": "Animation",
+      "rating": "4.6",
+      "trailer": "https://example.com/videos/frozen_trailer.mp4",
+      "description": "Princess Anna sets out on a journey to save her kingdom from eternal winter."
+    },
+    {
+      "id": "117",
+      "name": "The Avengers",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3VBtt6532KFJvt31DlXx7GkzawX_F3_oKww&s",
+      "price": "15.99",
+      "category": "Action",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/avengers_trailer.mp4",
+      "description": "Earth's mightiest heroes must come together to stop Loki and his alien army."
+    },
+    {
+      "id": "118",
+      "name": "Spider-Man: No Way Home",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWm6a4owdhYJdjT6D9av_Kk8VWXyGw7vNrGg&s",
+      "price": "17.99",
+      "category": "Action",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/spiderman_trailer.mp4",
+      "description": "Peter Parker faces multiverse villains and the consequences of revealing his identity."
+    },
+    {
+      "id": "119",
+      "name": "Guardians of the Galaxy",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf759gBLgceWl27BwySkEUWlj1mKtyLeOHEw&s",
+      "price": "14.99",
+      "category": "Action",
+      "rating": "4.7",
+      "trailer": "https://example.com/videos/guardians_trailer.mp4",
+      "description": "A group of intergalactic criminals must pull together to stop a fanatical warrior from taking control of the universe."
+    },
+    {
+      "id": "120",
+      "name": "Black Panther",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO7bTiAQXpYtoSRVnLngM0FoLOkoGYKShrhQ&s",
+      "price": "15.99",
+      "category": "Action",
+      "rating": "4.8",
+      "trailer": "https://example.com/videos/blackpanther_trailer.mp4",
+      "description": "T’Challa returns home to the African nation of Wakanda to take his rightful place as king and protector."
+    },
+    {
+      "id": "22",
+      "name": "DDLJ",
+      "image": "data:image/jpeg;base64,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",
+      "price": "11",
+      "category": "drama",
+      "rating": "6",
+      "trailer": "https://youtu.be/qPVijZzUOaI?si=HfTKo_OIGPFXi1RL",
+      "description": "he film stars Shah Rukh Khan and Kajol as Raj and Simran,"
+    }
+  ]
+}
