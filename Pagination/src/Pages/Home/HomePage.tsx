@@ -9,7 +9,7 @@ import aboutimg from "../../assets/images/about_3.webp"
 export default function HomePage() {
   const slides = [
     {
-      id: 1,
+      id: 1,np
       image: hero1,
       title: "We Are Specialists In Architecture",
       subtitle: "Transforming spaces with innovative designs",
